@@ -1,0 +1,184 @@
+/* Liste des promotions */
+.promotion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.promotion-card {
+  width: 220px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.promotion-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.promotion-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.promotion-card h2 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+  margin: 5px 0;
+}
+
+.new-price {
+  font-weight: bold;
+  color: #e53935;
+  margin: 5px 0;
+}
+
+/* Détails de la promotion */
+.promotion-details {
+  position: fixed;       /* fixe à l’écran */
+  top: 50%;              /* centre verticalement */
+  left: 50%;             /* centre horizontalement */
+  transform: translate(-50%, -50%); /* ajuste le centrage exact */
+  max-width: 600px;
+  width: 90%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  text-align: center;
+  z-index: 1000;         /* devant tout */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.promotion-image-details {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.promotion-details h3 {
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.btn-buy,
+.btn-close {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.btn-buy {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-buy:hover {
+  background-color: #43a047;
+}
+
+.btn-close {
+  background-color: #757575;
+  color: #fff;
+}
+
+.btn-close:hover {
+  background-color: #616161;
+}
+
+/* Popup d'achat */
+.buy-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.popup-content h3 {
+  margin-bottom: 15px;
+}
+
+.btn-confirm,
+.btn-popup-close {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 5px;
+  transition: background-color 0.2s;
+}
+
+.btn-confirm {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.btn-confirm:hover {
+  background-color: #43a047;
+}
+
+.btn-popup-close {
+  background-color: #757575;
+  color: #fff;
+}
+
+.btn-popup-close:hover {
+  background-color: #616161;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .promotion-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .promotion-card {
+    width: 90%;
+  }
+
+  .promotion-details {
+    width: 90%;
+  }
+}
