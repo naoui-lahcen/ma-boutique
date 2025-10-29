@@ -1,0 +1,19 @@
+<h1>Nos Produits</h1>
+<div class="product-list">
+  <div *ngFor="let product of products" class="product-card" (click)="selectProduct(product)">
+    <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image" />
+    <h2>{{ product.name }}</h2>
+    <p class="price">{{ product.price | currency:'EUR' }}</p>
+  </div>
+</div>
+
+<div class="product-details" *ngIf="selectedProduct">
+  <img [src]="selectedProduct.imageUrl" alt="{{ selectedProduct.name }}" class="product-image-details" />
+  <h3>{{ selectedProduct.name }}</h3>
+  <p class="price">{{ selectedProduct.price | currency:'EUR' }}</p>
+  <p>{{ selectedProduct.description }}</p>
+    <!-- Bouton dans un div séparé -->
+  <div class="close-btn-container">
+    <button (click)="closeDetails()">Fermer</button>
+  </div>
+</div>
