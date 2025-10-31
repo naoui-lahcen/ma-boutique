@@ -1,2 +1,32 @@
-<h1>Bienvenue sur notre boutique !</h1>
-<p>contact works!</p>
+<div class="contact-container">
+  <h1>📞 Contactez-nous</h1>
+  <p class="intro">
+    Bienvenue sur notre boutique ! Nous serions ravis de répondre à toutes vos questions.
+  </p>
+
+  <div class="contact-form">
+    <form>
+      <label>Nom</label>
+      <input type="text" placeholder="Entrez votre nom" required />
+
+      <label>Email</label>
+      <input type="email" placeholder="Entrez votre email" required />
+	  
+	  <label for="phone">Téléphone</label>
+	  <input 
+          id="phone" 
+          name="phone" 
+          type="tel" 
+          placeholder="Ex : 0612345678 ou +212612345678" 
+          pattern="^(0[5-7]\d{8}|(\+212[5-7]\d{8}))$" 
+          title="Numéro de téléphone valide (ex : 0612345678 ou +212612345678)" 
+          required
+        />
+
+      <label>Message</label>
+      <textarea rows="4" placeholder="Votre message..." required></textarea>
+
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+</div>
