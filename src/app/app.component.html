@@ -1,13 +1,16 @@
-<!-- 🌟 Menu de navigation toujours visible -->
 <nav class="navbar">
   <div class="nav-logo">🛍️ Ma Boutique</div>
-  <ul class="nav-links">
-    <li><a routerLink="/">Accueil</a></li>
-    <li><a routerLink="/produits">Produits</a></li>
-    <li><a routerLink="/promotions">Promotions</a></li>
-    <li><a routerLink="/contact">Contact</a></li>
+
+  <!-- bouton burger mobile -->
+  <div class="nav-toggle" (click)="toggleMenu()">&#9776;</div>
+
+  <!-- menu liens -->
+  <ul class="nav-links" [class.active]="isMenuOpen">
+    <li><a routerLink="/" (click)="closeMenu()">Accueil</a></li>
+    <li><a routerLink="/produits" (click)="closeMenu()">Produits</a></li>
+    <li><a routerLink="/promotions" (click)="closeMenu()">Promotions</a></li>
+    <li><a routerLink="/contact" (click)="closeMenu()">Contact</a></li>
   </ul>
 </nav>
 
-<!-- 🔄 Zone où les pages s'affichent -->
 <router-outlet></router-outlet>

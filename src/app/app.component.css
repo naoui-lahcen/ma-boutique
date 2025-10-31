@@ -10,8 +10,17 @@ body {
   background: linear-gradient(90deg, #1e3c72, #2a5298);
   padding: 1rem 2rem;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
+.nav-logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* liens menu desktop */
 .nav-links {
   list-style: none;
   display: flex;
@@ -27,4 +36,69 @@ body {
 
 .nav-links a:hover {
   text-decoration: underline;
+}
+
+/* bouton burger mobile (caché desktop) */
+.nav-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* responsive pour mobile */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    background: rgba(30, 60, 114, 0.95); /* fond semi-transparent */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 0.5rem 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+    opacity: 1;
+  }
+
+  .nav-links li {
+    text-align: center;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* séparateur entre les items */
+    border-radius: 5px; /* coins légèrement arrondis */
+    transition: background 0.2s;
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none; /* pas de séparateur sur le dernier */
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    transition: color 0.2s;
+  }
+
+  /* hover / focus pour chaque item */
+  .nav-links li:hover, .nav-links li:focus {
+    background: rgba(255, 255, 255, 0.1); /* léger survol */
+  }
+
+  .nav-links li a:hover {
+    color: #ffd700; /* couleur accent au survol */
+  }
 }

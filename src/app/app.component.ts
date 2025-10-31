@@ -9,4 +9,16 @@ import { RouterModule } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {}
+export class AppComponent {
+  isMenuOpen = false;
+
+  // ouvrir/fermer menu burger
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  // fermer menu au clic sur un lien
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+}
